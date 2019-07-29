@@ -83,6 +83,18 @@ describe('Cart', function() {
        let totalPrice = cart.getPrice();
        //Assert
        assert.equal(70, totalPrice);
-    })
+    });
+
+    it('should give affiliate discount user is an affiliate of the store', function() {
+      //Arrange
+      let user = new User('John', false, true)
+      let cart = new Cart(user);
+      let product = new Product('Earphones', 100);
+      cart.addItem(product, 1);
+      //Act
+      let totalPrice = cart.getPrice();
+      //Assert
+      assert.equal(90, totalPrice);
+   })
   });
 });

@@ -24,5 +24,15 @@ describe('product-discount', function() {
       //Assert
       assert.equal(30, discountPercent);
     });
+
+    it('should return 10% when user is an affiliate of the store', function() {
+      //Arrange
+      let productDiscount = new ProductDiscount();
+      let user = new User("John", false, true);
+      //Act
+      let discountPercent = productDiscount.getDiscount(user);
+      //Assert
+      assert.equal(10, discountPercent);
+    });
   });
 });
