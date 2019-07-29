@@ -1,11 +1,11 @@
-const ProductDiscount = require('../../src/discount_rules/percent-discount');
-const User = require('../../src/model/user');
-var assert = require('assert');
+const ProductDiscount = require("../../src/discount_rules/percent-discount");
+const User = require("../../src/model/user").default;
+var assert = require("assert");
 
-describe('percent-discount', function() {
-  describe('#getDiscount()', function(){
+describe("percent-discount", function() {
+  describe("#getDiscount()", function(){
 
-    it('should not return 30% when user is not an employee of the store', function() {
+    it("should not return 30% when user is not an employee of the store", function() {
       //Arrange
       let productDiscount = new ProductDiscount();
       let user = new User("John", false);
@@ -15,7 +15,7 @@ describe('percent-discount', function() {
       assert.notEqual(30, discountPercent);
     });
 
-    it('should return 30% when user is an employee of the store', function() {
+    it("should return 30% when user is an employee of the store", function() {
       //Arrange
       let productDiscount = new ProductDiscount();
       let user = new User("John", true);
@@ -25,7 +25,7 @@ describe('percent-discount', function() {
       assert.equal(30, discountPercent);
     });
 
-    it('should return 10% when user is an affiliate of the store', function() {
+    it("should return 10% when user is an affiliate of the store", function() {
       //Arrange
       let productDiscount = new ProductDiscount();
       let user = new User("John", false, true);
@@ -37,7 +37,7 @@ describe('percent-discount', function() {
 
 
 
-    it('should return 30% when user has enrolled for more than 2 years and is also an employee', function() {
+    it("should return 30% when user has enrolled for more than 2 years and is also an employee", function() {
       //Arrange
       let productDiscount = new ProductDiscount();
       let enrollmentDate = new Date(new Date().setFullYear(new Date().getFullYear() - 3));
@@ -48,7 +48,7 @@ describe('percent-discount', function() {
       assert.equal(30, discountPercent);
     });
 
-    it('should return 5% when user has enrolled for more than 2 years', function() {
+    it("should return 5% when user has enrolled for more than 2 years", function() {
       //Arrange
       let productDiscount = new ProductDiscount();
       let enrollmentDate = new Date(new Date().setFullYear(new Date().getFullYear() - 3));

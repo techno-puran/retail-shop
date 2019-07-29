@@ -1,10 +1,10 @@
-const DiscountRule = require('../../src/discount_rules/percent_discount_rules/loyalty-discount');
-const User = require('../../src/model/user');
-var assert = require('assert');
+const DiscountRule = require("../../src/discount_rules/percent_discount_rules/loyalty-discount").default;
+const User = require("../../src/model/user").default;
+var assert = require("assert");
 
-describe('loyalty-discount', function() {
-  describe('#isApplicable()', function(){
-    it('should return false when user is enrolled for less than 2 years', function() {
+describe("loyalty-discount", function() {
+  describe("#isApplicable()", function(){
+    it("should return false when user is enrolled for less than 2 years", function() {
       //Arrange
       let discountRule = new DiscountRule();
       let user = new User("John");
@@ -14,7 +14,7 @@ describe('loyalty-discount', function() {
       assert.equal(false, isApplicable);
     });
 
-    it('should return true when user is an enrolled with store for more than 2 years', function() {
+    it("should return true when user is an enrolled with store for more than 2 years", function() {
       //Arrange
       let discountRule = new DiscountRule();
       let enrollmentDate = new Date(new Date().setFullYear(new Date().getFullYear() - 3));
@@ -26,8 +26,8 @@ describe('loyalty-discount', function() {
     });
   });
 
-  describe('#getDiscount()', function(){
-    it('should return 5% as discount percent for loyalty user', function() {
+  describe("#getDiscount()", function(){
+    it("should return 5% as discount percent for loyalty user", function() {
       //Arrange
       let discountRule = new DiscountRule();
       //Act

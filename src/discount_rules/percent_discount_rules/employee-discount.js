@@ -1,4 +1,4 @@
-module.exports = class EmployeeDiscountRule {
+export default class EmployeeDiscountRule {
   isApplicable(user) {
     return user.isEmployee;
   }

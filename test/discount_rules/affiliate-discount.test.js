@@ -1,10 +1,10 @@
-const DiscountRule = require('../../src/discount_rules/percent_discount_rules/affiliate-discount');
-const User = require('../../src/model/user');
-var assert = require('assert');
+const DiscountRule = require("../../src/discount_rules/percent_discount_rules/affiliate-discount").default;
+const User = require("../../src/model/user").default;
+var assert = require("assert");
 
-describe('affiliate-discount', function() {
-  describe('#isApplicable()', function(){
-    it('should return false when user is not an affiliate of the store', function() {
+describe("affiliate-discount", function() {
+  describe("#isApplicable()", function(){
+    it("should return false when user is not an affiliate of the store", function() {
       //Arrange
       let discountRule = new DiscountRule();
       let user = new User("John");
@@ -14,7 +14,7 @@ describe('affiliate-discount', function() {
       assert.equal(false, isApplicable);
     });
 
-    it('should return true when user is an affiliate of the store', function() {
+    it("should return true when user is an affiliate of the store", function() {
       //Arrange
       let discountRule = new DiscountRule();
       let user = new User("John", false, true);
@@ -25,8 +25,8 @@ describe('affiliate-discount', function() {
     });
   });
 
-  describe('#getDiscount()', function(){
-    it('should return 10% as discount percent for affiliate user', function() {
+  describe("#getDiscount()", function(){
+    it("should return 10% as discount percent for affiliate user", function() {
       //Arrange
       let discountRule = new DiscountRule();
       //Act
