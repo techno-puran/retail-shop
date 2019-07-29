@@ -1,8 +1,8 @@
-const ProductDiscount = require('../../src/discount_rules/product-discount');
+const ProductDiscount = require('../../src/discount_rules/percent-discount');
 const User = require('../../src/model/user');
 var assert = require('assert');
 
-describe('product-discount', function() {
+describe('percent-discount', function() {
   describe('#getDiscount()', function(){
 
     it('should not return 30% when user is not an employee of the store', function() {

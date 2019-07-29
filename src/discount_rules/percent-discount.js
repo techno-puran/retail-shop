@@ -1,11 +1,15 @@
-module.exports = class ProductOffers {
+module.exports = class PercentDiscount {
   constructor() {
     this.employeeDiscount = 30;
     this.affiliateDiscount = 10;
     this.loyalCustomerDiscount = 5;
   }
 
-  getDiscount(user) {
+  getDiscount(user, product) {
+    
+    if(product && product.isGroceryItem())
+      return 0;
+
     if(user === undefined)
       return 0;
 
