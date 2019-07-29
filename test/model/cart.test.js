@@ -95,6 +95,33 @@ describe('Cart', function() {
       let totalPrice = cart.getPrice();
       //Assert
       assert.equal(90, totalPrice);
-   })
+    });
+
+
+    it('should give employee discount if user is enrolled with store for more than 2 years and is an employee also', function() {
+      //Arrange
+      let enrollmentDate = new Date(new Date().setFullYear(new Date().getFullYear() -2));
+      let user = new User("John", true, false, enrollmentDate);
+      let cart = new Cart(user);
+      let product = new Product('Earphones', 100);
+      cart.addItem(product, 1);
+      //Act
+      let totalPrice = cart.getPrice();
+      //Assert
+      assert.equal(70, totalPrice);
+    });
+
+    it('should give long association discount user is enrolled with store for more than 2 years', function() {
+      //Arrange
+      let enrollmentDate = new Date(new Date().setFullYear(new Date().getFullYear() -2));
+      let user = new User("John", false, false, enrollmentDate);
+      let cart = new Cart(user);
+      let product = new Product('Earphones', 50);
+      cart.addItem(product, 1);
+      //Act
+      let totalPrice = cart.getPrice();
+      //Assert
+      assert.equal(47.5, totalPrice);
+    });
   });
 });
