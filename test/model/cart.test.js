@@ -75,7 +75,7 @@ describe('Cart', function() {
 
     it('should give employee discount user is an employee of the store', function() {
        //Arrange
-       let user = new User('John', false)
+       let user = new User('John', true)
        let cart = new Cart(user);
        let product = new Product('Earphones', 100);
        cart.addItem(product, 1);
