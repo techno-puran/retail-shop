@@ -4,7 +4,7 @@
   "description": "A retail shop discount engine",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test/**/*.js"
   },
   "repository": {
     "type": "git",
