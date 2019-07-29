@@ -1,4 +1,5 @@
 const ProductDiscount = require('../../src/discount_rules/product-discount');
+const User = require('../../src/model/user');
 var assert = require('assert');
 
 describe('product-discount', function() {
@@ -11,7 +12,7 @@ describe('product-discount', function() {
       //Act
       let discountPercent = productDiscount.getDiscount(user);
       //Assert
-      assert.notequal(0, discountPercent);
+      assert.notEqual(30, discountPercent);
     });
 
     it('should return 30% when user is an employee of the store', function() {
@@ -21,7 +22,7 @@ describe('product-discount', function() {
       //Act
       let discountPercent = productDiscount.getDiscount(user);
       //Assert
-      assert.notequal(30, discountPercent);
+      assert.equal(30, discountPercent);
     });
   });
 });
