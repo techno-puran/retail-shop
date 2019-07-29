@@ -19,7 +19,17 @@ describe('Cart', function() {
 
 
   describe('#apply5forEvery100SpentOffer()', function() {
-    it('should return 96 price when total price of 101 is passed and  5 off on every 100 spent is applied', function(){
+
+    it('should return 99 price when total price of 99 is passed', function(){
+      //Arrange
+      let cart = new Cart();
+      //Act
+      let totalPrice = cart.apply5forEvery100SpentOffer(99);
+      //Assert
+      assert.equal(99, totalPrice);
+    });
+
+    it('should return 96 price when total price of 101 is passed', function(){
       //Arrange
       let cart = new Cart();
       //Act
