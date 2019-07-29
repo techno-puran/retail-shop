@@ -1,6 +1,7 @@
 module.exports = class ProductOffers {
   constructor() {
     this.employeeDiscount = 30;
+    this.affiliateDiscount = 10;
   }
 
   getDiscount(user) {
@@ -10,6 +11,10 @@ module.exports = class ProductOffers {
     switch(true){
       case user.isEmployee:
         return this.employeeDiscount;
+
+      case user.isAffiliate:
+        return this.affiliateDiscount;
+
       default:
         return 0;
     }
