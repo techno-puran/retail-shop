@@ -1,3 +1,5 @@
-export default class User{
-    
+module.exports = class User{
+    constructor(name) {
+        this.name = name;
+    }
 }

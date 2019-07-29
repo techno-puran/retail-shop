@@ -1,3 +1,6 @@
-export default class CartItem{
-    
+module.exports =  class CartItem{
+    constructor(product, quantity) {
+        this.product = product;
+        this.quantity = quantity;
+    }
 }
