@@ -71,5 +71,6 @@ describe('Cart', function() {
       //Assert
       assert.equal(96, totalPrice);
     });
+    
   });
 });
