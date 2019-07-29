@@ -22,8 +22,14 @@ module.exports = class Cart {
             totalPrice += item.product.unitPrice * item.quantity;
         }
 
-        return (totalPrice < 100) 
-                ? totalPrice 
-                : totalPrice - (Math.floor(totalPrice / 100) * 5);
+        let discountedPrice = this.apply5forEvery100SpentOffer(totalPrice);
+
+        return discountedPrice;
+    }
+
+    apply5forEvery100SpentOffer(totalPrice) {
+        if(totalPrice < 100) 
+            return totalPrice;
+        return  totalPrice - (Math.floor(totalPrice / 100) * 5);
     }
 }

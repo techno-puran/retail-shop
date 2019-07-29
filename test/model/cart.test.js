@@ -15,7 +15,19 @@ describe('Cart', function() {
       assert.equal(true, isAdded);
       
     });
-  })
+  });
+
+
+  describe('#apply5forEvery100SpentOffer()', function() {
+    it('should return 96 price when total price of 101 is passed and  5 off on every 100 spent is applied', function(){
+      //Arrange
+      let cart = new Cart();
+      //Act
+      let totalPrice = cart.apply5forEvery100SpentOffer(101);
+      //Assert
+      assert.equal(96, totalPrice);
+    });
+  });  
 
   describe('#getPrice()', function() {
     
