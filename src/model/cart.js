@@ -1,8 +1,10 @@
 const CartItem = require('./cart-item');
+const CartDiscountRule = require('../discount_rules/cart-discount');
 
 module.exports = class Cart {
     constructor() {
         this.cartItems = [];
+        this.cartDiscountRule = new CartDiscountRule();
     }
 
     addItem(product, quantity) {
@@ -22,14 +24,8 @@ module.exports = class Cart {
             totalPrice += item.product.unitPrice * item.quantity;
         }
 
-        let discountedPrice = this.apply5forEvery100SpentOffer(totalPrice);
+        let discount = this.cartDiscountRule.getDiscount(totalPrice);
 
-        return discountedPrice;
-    }
-
-    apply5forEvery100SpentOffer(totalPrice) {
-        if(totalPrice < 100) 
-            return totalPrice;
-        return  totalPrice - (Math.floor(totalPrice / 100) * 5);
+        return totalPrice - discount;
     }
 }

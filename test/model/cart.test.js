@@ -17,28 +17,6 @@ describe('Cart', function() {
     });
   });
 
-
-  describe('#apply5forEvery100SpentOffer()', function() {
-
-    it('should return 99 price when total price of 99 is passed', function(){
-      //Arrange
-      let cart = new Cart();
-      //Act
-      let totalPrice = cart.apply5forEvery100SpentOffer(99);
-      //Assert
-      assert.equal(99, totalPrice);
-    });
-
-    it('should return 96 price when total price of 101 is passed', function(){
-      //Arrange
-      let cart = new Cart();
-      //Act
-      let totalPrice = cart.apply5forEvery100SpentOffer(101);
-      //Assert
-      assert.equal(96, totalPrice);
-    });
-  });  
-
   describe('#getPrice()', function() {
     
     it('should return 0 price for empty cart', function(){
