@@ -21,6 +21,7 @@ module.exports = class Cart {
     getPrice() {
         let totalPrice = 0;
         for (let item of this.cartItems) {
+            
             totalPrice += item.product.unitPrice * item.quantity;
         }
 

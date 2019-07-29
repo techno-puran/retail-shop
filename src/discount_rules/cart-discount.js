@@ -1,11 +1,5 @@
 module.exports = class CartDiscount {
 
-  constructor() {
-    this.apply5forEvery100SpentOffer = function(totalPrice) {
-      return Math.floor(totalPrice / 100) * 5;
-    }
-  }
-
   getDiscount(totalPrice) {
     switch(true) {
 
@@ -15,6 +9,10 @@ module.exports = class CartDiscount {
         default:
           return 0;
     }
+  }
+  
+  apply5forEvery100SpentOffer(totalPrice) {
+    return Math.floor(totalPrice / 100) * 5;
   }
 
   

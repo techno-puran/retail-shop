@@ -3,9 +3,9 @@ module.exports = class ProductOffers {
     this.employeeDiscount = 30;
   }
 
-  getDiscount(User){
+  getDiscount(user){
     switch(true){
-      case User.isEmployee:
+      case user.isEmployee:
         return this.employeeDiscount;
       default:
         return 0;

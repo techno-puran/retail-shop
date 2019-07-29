@@ -1,5 +1,6 @@
 const Cart = require('../../src/model/cart');
 const Product = require('../../src/model/product');
+const User = require('../../src/model/user');
 
 var assert = require('assert');
 
@@ -71,6 +72,17 @@ describe('Cart', function() {
       //Assert
       assert.equal(96, totalPrice);
     });
-    
+
+    it('should give employee discount user is an employee of the store', function() {
+       //Arrange
+       let user = new User('John', false)
+       let cart = new Cart(user);
+       let product = new Product('Earphones', 100);
+       cart.addItem(product, 1);
+       //Act
+       let totalPrice = cart.getPrice();
+       //Assert
+       assert.equal(70, totalPrice);
+    })
   });
 });
