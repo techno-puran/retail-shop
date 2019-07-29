@@ -25,8 +25,8 @@ module.exports = class Cart {
         let totalPrice = 0;
         for (let item of this.cartItems) {
             let userDiscount = this.productDiscountRule.getDiscount(this.user, item.product);
-            let unitPrice = item.product.unitPrice * (1 - userDiscount / 100);
-            totalPrice += unitPrice * item.quantity;
+            let discountedUnitPrice = item.product.unitPrice * (1 - userDiscount / 100);
+            totalPrice += discountedUnitPrice * item.quantity;
         }
 
         let discount = this.cartDiscountRule.getDiscount(totalPrice);
