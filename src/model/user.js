@@ -1,14 +1,14 @@
-module.exports = class User{
-    constructor(name, isEmployee = false, isAffiliate = false, enrollmentDate = new Date()) {
-        this.name = name;
-        this.isEmployee = isEmployee;
-        this.isAffiliate = isAffiliate;
-        this.enrollmentDate = enrollmentDate;
-    }
+export default class User{
+  constructor(name, isEmployee = false, isAffiliate = false, enrollmentDate = new Date()) {
+    this.name = name;
+    this.isEmployee = isEmployee;
+    this.isAffiliate = isAffiliate;
+    this.enrollmentDate = enrollmentDate;
+  }
 
-    isLoyalCustomer() {
-        return this.calcDate(new Date(), this.enrollmentDate) >= 2;
-    }
+  isLoyalCustomer() {
+    return this.calcDate(new Date(), this.enrollmentDate) >= 2;
+  }
 
 
   calcDate(date1,date2) {

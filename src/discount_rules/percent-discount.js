@@ -1,6 +1,6 @@
-const EmployeePercentDiscount = require('./percent_discount_rules/employee-discount');
-const AffiliatePercentDiscount = require('./percent_discount_rules/affiliate-discount');
-const LoyaltyCustomerPercentDiscount = require('./percent_discount_rules/loyalty-discount');
+const EmployeePercentDiscount = require("./percent_discount_rules/employee-discount").default;
+const AffiliatePercentDiscount = require("./percent_discount_rules/affiliate-discount").default;
+const LoyaltyCustomerPercentDiscount = require("./percent_discount_rules/loyalty-discount").default;
 
 module.exports = class PercentDiscount {
   constructor() {
@@ -24,4 +24,4 @@ module.exports = class PercentDiscount {
 
     return 0;
   }
-}
+};

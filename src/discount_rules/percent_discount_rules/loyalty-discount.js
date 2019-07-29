@@ -1,4 +1,4 @@
-module.exports = class LoyaltyDiscountRule {
+export default class LoyaltyDiscountRule {
   isApplicable(user) {
     return user.isLoyalCustomer();
   }
