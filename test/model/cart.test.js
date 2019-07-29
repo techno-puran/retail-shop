@@ -113,7 +113,7 @@ describe('Cart', function() {
 
     it('should give long association discount user is enrolled with store for more than 2 years', function() {
       //Arrange
-      let enrollmentDate = new Date(new Date().setFullYear(new Date().getFullYear() -2));
+      let enrollmentDate = new Date(new Date().setFullYear(new Date().getFullYear() - 3));
       let user = new User("John", false, false, enrollmentDate);
       let cart = new Cart(user);
       let product = new Product('Earphones', 50);
