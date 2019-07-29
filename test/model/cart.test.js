@@ -1,8 +1,7 @@
-var Cart = require("../../src/model/cart");
+import assert from "assert";
 import Product from "../../src/model/product";
 import User from "../../src/model/user";
-
-var assert = require("assert");
+const Cart = require("../../src/model/cart");
 
 describe("Cart", function() {
   describe("#addItem()", function(){
@@ -14,7 +13,6 @@ describe("Cart", function() {
       let isAdded = cart.addItem(product, 2);
       //Assert
       assert.equal(true, isAdded);
-      
     });
   });
 
