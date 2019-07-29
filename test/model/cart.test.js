@@ -50,15 +50,26 @@ describe('Cart', function() {
       assert.equal(945, totalPrice);
     });
 
-    it('should return 90 when total cart price is 90 and 5 off on every 100 spent is applied', function(){
+    it('should return 99 when total cart price is 99 and 5 off on every 100 spent is applied', function(){
       //Arrange
       let cart = new Cart();
-      let product = new Product('Earphones', 90);
+      let product = new Product('Earphones', 99);
       cart.addItem(product, 1);
       //Act
       let totalPrice = cart.getPrice();
       //Assert
-      assert.equal(90, totalPrice);
+      assert.equal(99, totalPrice);
+    });
+
+    it('should return 96 when total cart price is 101 and 5 off on every 100 spent is applied', function(){
+      //Arrange
+      let cart = new Cart();
+      let product = new Product('Earphones', 101);
+      cart.addItem(product, 1);
+      //Act
+      let totalPrice = cart.getPrice();
+      //Assert
+      assert.equal(96, totalPrice);
     });
   });
 });

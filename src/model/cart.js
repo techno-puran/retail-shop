@@ -16,11 +16,14 @@ module.exports = class Cart {
         }
     }
 
-    getPrice(user) {
+    getPrice() {
         let totalPrice = 0;
         for (let item of this.cartItems) {
             totalPrice += item.product.unitPrice * item.quantity;
         }
-        return totalPrice;
+
+        return (totalPrice < 100) 
+                ? totalPrice 
+                : totalPrice - (Math.floor(totalPrice / 100) * 5);
     }
 }
