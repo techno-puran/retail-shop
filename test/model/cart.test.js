@@ -123,5 +123,19 @@ describe('Cart', function() {
       //Assert
       assert.equal(47.5, totalPrice);
     });
+
+
+    it('should not give percentage discount if category is grocery', function() {
+      //Arrange
+      let user = new User("John", true);
+      let cart = new Cart(user);
+      let product = new Product('Earphones', 100, 'grocery');
+      cart.addItem(product, 1);
+      //Act
+      let totalPrice = cart.getPrice();
+      //Assert
+      assert.equal(95, totalPrice);
+    });
+
   });
 });
