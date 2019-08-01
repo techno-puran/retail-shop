@@ -1,8 +1,8 @@
-const EmployeePercentDiscount = require("./percent_discount_rules/employee-discount").default;
-const AffiliatePercentDiscount = require("./percent_discount_rules/affiliate-discount").default;
-const LoyaltyCustomerPercentDiscount = require("./percent_discount_rules/loyalty-discount").default;
+import EmployeePercentDiscount from "./percent_discount_rules/employee-discount";
+import AffiliatePercentDiscount from "./percent_discount_rules/affiliate-discount";
+import LoyaltyCustomerPercentDiscount from "./percent_discount_rules/loyalty-discount";
 
-module.exports = class PercentDiscount {
+export default class PercentDiscount {
   constructor() {
     let employeeDiscount = new EmployeePercentDiscount();
     let affiliateDiscount = new AffiliatePercentDiscount();
@@ -24,4 +24,4 @@ module.exports = class PercentDiscount {
 
     return 0;
   }
-};
+}

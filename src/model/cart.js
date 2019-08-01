@@ -1,8 +1,8 @@
-const CartItem = require("./cart-item").default;
-const CartDiscountRule = require("../discount_rules/cart-discount").default;
-const ProductDiscountRule = require("../discount_rules/percent-discount");
+import CartItem from "./cart-item";
+import CartDiscountRule from "../discount_rules/cart-discount";
+import ProductDiscountRule from "../discount_rules/percent-discount";
 
-module.exports = class Cart {
+export default class Cart {
   constructor(user) {
     this.user = user;
     this.cartItems = [];
@@ -26,4 +26,4 @@ module.exports = class Cart {
     let discount = this.cartDiscountRule.getDiscount(totalPrice);
     return totalPrice - discount;
   }
-};
+}

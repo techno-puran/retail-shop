@@ -1,5 +1,5 @@
-const ProductDiscount = require("../../src/discount_rules/percent-discount");
-const User = require("../../src/model/user").default;
+import ProductDiscount from "../../src/discount_rules/percent-discount";
+import User from "../../src/model/user";
 var assert = require("assert");
 
 describe("percent-discount", function() {

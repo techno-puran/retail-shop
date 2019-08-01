@@ -1,7 +1,7 @@
 import assert from "assert";
 import Product from "../../src/model/product";
 import User from "../../src/model/user";
-const Cart = require("../../src/model/cart");
+import Cart from "../../src/model/cart";
 
 describe("Cart", function() {
   describe("#addItem()", function(){

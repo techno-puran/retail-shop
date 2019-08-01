@@ -1,4 +1,4 @@
-const CartDiscount = require("../../src/discount_rules/cart-discount").default;
+import CartDiscount from "../../src/discount_rules/cart-discount";
 var assert = require("assert");
 
 describe("cart-discount", function() {

@@ -1,5 +1,5 @@
-const DiscountRule = require("../../src/discount_rules/percent_discount_rules/loyalty-discount").default;
-const User = require("../../src/model/user").default;
+import DiscountRule from "../../src/discount_rules/percent_discount_rules/loyalty-discount";
+import User from "../../src/model/user";
 var assert = require("assert");
 
 describe("loyalty-discount", function() {
